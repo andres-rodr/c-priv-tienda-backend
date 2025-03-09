@@ -1,9 +1,12 @@
 import express, { Express } from "express";
 import userRouter from "./routers/users.routes";
+import { dbConnection } from "./utils/mongodb";
 
 // Creación de El servidor
 const app: Express = express()
 app.use(express.json());
+
+dbConnection()
 
 // Creación del Enrutado
 app.use("/user", userRouter)
