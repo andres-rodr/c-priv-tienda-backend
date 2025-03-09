@@ -43,6 +43,8 @@ userRouter.post("/task", async (req, res) => {
     return res.status(200).json({"message": "Tarea Creada exitosamente"})
 })
 
+// ================
+// TAREA 1
 // Endpoint GET a la ruta "/views/", donde cuando se consulte, retorne la cantidad de 
 // vistas que hayy al mismo tiempo, aumente la variable de las vistas en 1. 
 // Y también decir la hora actual.
@@ -53,5 +55,14 @@ userRouter.post("/task", async (req, res) => {
 
 // Los EndPoints deben tener buenas prácticas que se han enseñado, como el uso de los
 // enrutadores
+
+// ====================
+// TAREA 2
+// Crear un esquema para productos de la tienda
+// Categorías de Productos
+// Proveedores de la tienda
+// Ventas -> Registro de productos, cantidades y precio
+
+// EndPoint para registro del usuario con tantas validaciones como sea posible.
 
 export default userRouter
