@@ -49,6 +49,8 @@ userRouter.post("/task", async (req, res) => {
 // vistas que hayy al mismo tiempo, aumente la variable de las vistas en 1. 
 // Y también decir la hora actual.
 
+
+
 // EndPoint POST, en la ruta "/math/sum", donde tome de un diccionario los valores
 // con llave "val1" y "val2" y los sume. Verificar si son son números, y verificar
 // que no sean números pares
