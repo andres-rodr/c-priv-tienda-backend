@@ -1,3 +1,4 @@
+import ordersController from "@/controllers/orders.controller";
 import { Router } from "express";
 
 const orderRouter = Router()
@@ -5,30 +6,21 @@ const orderRouter = Router()
 
 orderRouter.post(
     "/",
-    (req, res)=> {
-        return res.status(200).json({
-            "message" : "mondongo",
-        })
-    }
+    ordersController.CreateOrders
 )
 
 orderRouter.get(
     "/",
-    (req, res)=>{
-        return res.status(200).json({
-            "message" : "Pata",
-        })
-    }
+   ordersController.GetOrders
 )
 
 orderRouter.put(
     "/",
-    (req, res)=> {
-        return res.status(200).json({
-            "message": "otorrinolaringólogo",
-        })
-    }
+    ordersController.UpdateOrders
 )
 
-orderRouter.delete("/",(req, res)=> {return res.status(200).json({"message": "electroencefalografista"})})
+orderRouter.delete(
+    "/",
+    ordersController.DeleteOrders
+)
 export default orderRouter

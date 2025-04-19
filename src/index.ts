@@ -23,7 +23,8 @@ app.use("/providers", providerRouter)
 app.use("/orders", orderRouter)
 app.use("/providerOrders", providerOrderRouter)
 
-// Poner a escuchar al servidor
-app.listen(3000, () => {
-    console.log("API encendida en puerto 3000")
-})
+const PORT =  3000;
+
+app.listen(PORT, () => {
+  console.log(`Servidor encendido en http://localhost:${PORT}`);
+});
