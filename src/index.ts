@@ -2,7 +2,6 @@ import express, { Express } from "express";
 import userRouter from "./routers/users.routes";
 import { dbConnection } from "./utils/mongodb";
 import viewsRouter from "./routers/views.routes";
-import mathRouter from "./routers/math.routes";
 import productRouter from "./routers/products.routes";
 import providerRouter from "./routers/provider.routes";
 import orderRouter from "./routers/orders.routes";
@@ -15,9 +14,8 @@ app.use(express.json());
 dbConnection()
 
 // Creación del Enrutado
-app.use("/user", userRouter)
+app.use("/users", userRouter)
 app.use("/views", viewsRouter)
-app.use("/math", mathRouter)
 app.use("/products", productRouter)
 app.use("/providers", providerRouter)
 app.use("/orders", orderRouter)

@@ -1,17 +1,25 @@
-import { getModelForClass, prop } from "@typegoose/typegoose";
+import { getModelForClass, prop, Ref } from "@typegoose/typegoose";
 import { Product } from "./product.model";
 import { User } from "./user.model";
+import { ObjectId } from "mongodb";
 
 class ProductOrder {
     // Producto, Precio, Cantidad
-    @prop({required: true})
-    public product!: Product;
+    @prop({required: true, ref: () => Product})
+    public product!: Ref<Product>;
 
     @prop({required: true})
     public price!: number;
 
     @prop({required: true})
     public quantity!: number;
+}
+
+// Crea una interfaz para ProductOrder
+export interface IProductOrder {
+    product: ObjectId;
+    price: number;
+    quantity: number;
 }
 
 class Order {
@@ -21,12 +29,12 @@ class Order {
 
     // llamar a la clase del cliente?
     @prop({required: true})
-    public user!: User;
+    public user!: string;
 
     @prop({required: true})
     public orderDate!: Date;
 
-    @prop({required: true})
+    @prop({})
     public paymentDate!: Date;
 
     @prop({required: true})
@@ -34,9 +42,6 @@ class Order {
 
     @prop({required: true})
     public paymentMethod!: string;
-
-    @prop({required: true})
-    public isLegalEntity!: boolean;
 
     @prop({required: true})
     public paymentStatus!: string;
